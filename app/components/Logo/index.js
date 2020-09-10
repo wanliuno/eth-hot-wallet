@@ -27,7 +27,7 @@ function Logo() {
     <Div>
       <Img alt="logo" src={walletLogo} />
       <a href={website}>
-        ETH Hot Wallet
+        WLI Hot Wallet
       </a>
     </Div>
   );

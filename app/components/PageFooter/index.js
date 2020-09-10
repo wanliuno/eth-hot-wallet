@@ -30,18 +30,16 @@ function PageFooter() {
     <Footer>
       <Row>
         <Col sm={12} xs={24}>
-          {'ETH Hot Wallet - '}
+          {'WLI Hot Wallet - '}
           <a href={github} target="_blank" rel="noopener">
-            Ethereum Wallet with ERC20 support (GitHub)
+            Wanliuno Wallet with ERC20 support (GitHub)
           </a><br />
           Created using: eth-lightwallet, React.js, Ant design...
         </Col>
 
         <Span>
           <Col sm={12} xs={24}>
-            <a href="https://medium.freecodecamp.org/how-to-build-an-ethereum-wallet-web-app-ac77dcaac573" target="_blank" rel="noopener">
-            How to build an Ethereum Wallet guide
-            </a>
+             WLI: 0xbc0938b3059d7EF7a6510D400cBe4498172088A5
             <br />
             ETH: 0x97325941fafde5a182e6f7e5475a592ac615a3f2
           </Col>

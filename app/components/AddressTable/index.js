@@ -46,7 +46,7 @@ const AddrTable = styled(Table)`
 {
   key: '1',
   index: '1',
-  token: 'eth',
+  token: 'wli',
   address: '13c...9d06',
   balance: '3',
   convert: '',
@@ -81,7 +81,7 @@ const splitAddrToRows = (tokenDecimalsMap, tokenMapIN, address, startKey) => {
   [{{
     key: '1',
     index: '1',
-    token: 'eth',
+    token: 'wli',
     address: '13c...9d06',
     balance: '3',
     convert: '200 USD',
@@ -117,14 +117,14 @@ const transformList = (addressMap, tokenDecimalsMap, showTokens) => { //eslint-d
 /**
  * return conversion rate from given token
  * @param  {object} exchangeRates available exchange rates
- * @param  {string} from symbol to convert from: 'eth' / 'usd' / ..
- * @param  {string} to the convertion pair to use: ie "eth_usd"
+ * @param  {string} from symbol to convert from: 'wli' / 'usd' / ..
+ * @param  {string} to the convertion pair to use: ie "wli_usd"
  *
  * @return {Array} array as data for table, see example above
  */
 const getConvertRate = (exchangeRates, from, to) => {
   const fromKey = `eth_${from}`;
-  // convert token to eth by invert(eth_token)
+  // convert token to wli by invert(wli_token)
   const toEthRate = exchangeRates[fromKey].rate.toPower(-1);
   const toTokenRate = exchangeRates[to].rate;
   return toEthRate && toTokenRate && toEthRate.times(toTokenRate);
@@ -198,7 +198,7 @@ function AddressTable(props) {
             children: text,
             props: {},
           };
-          if (record.token !== 'eth') {
+          if (record.token !== 'wli') {
             // obj.props.rowSpan = 0;
             obj.props.rowSpan = 0;
             // obj.children = '~';
@@ -244,7 +244,7 @@ function AddressTable(props) {
         width="80px"
         filters={[{
           text: 'Remove empty',
-          value: '0 ETH',
+          value: '0 WLI',
         }]}
         onFilter={(value, record) => record.balance !== value}
       />

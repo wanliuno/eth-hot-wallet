@@ -225,7 +225,7 @@ export function* SendTransaction() {
     };
 
     let tx;
-    if (tokenToSend === 'eth') {
+    if (tokenToSend === 'wli') {
       const sendAmount = new BigNumber(amount).times(Ether);
       const sendParams = { from: fromAddress, to: toAddress, value: sendAmount, gasPrice, gas: maxGasForEthSend };
       function sendTransactionPromise(params) { // eslint-disable-line no-inner-declarations
@@ -386,9 +386,9 @@ export function* getRates() {
   const requestURL = 'https://api.coinmarketcap.com/v1/ticker/?convert=EUR';
   try {
     let dummyRates = [{ // for testin in online = false mode
-      id: 'ethereum',
-      name: 'Ethereum',
-      symbol: 'ETH',
+      id: 'wanliuno',
+      name: 'Wanliuno',
+      symbol: 'WLI',
       rank: '2',
       price_usd: '295.412',
       price_btc: '0.0684231',

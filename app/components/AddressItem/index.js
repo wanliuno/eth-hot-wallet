@@ -15,9 +15,9 @@ import { Ether } from 'utils/constants';
 
 function AddressItem(props) {
   const { address, data, onChangeFrom, exchangeRates, convertTo } = props;
-  const ethData = data.get('eth');
+  const ethData = data.get('wli');
 
-  const balance = ethData.get('balance') !== false ? `${ethData.get('balance').div(Ether).toString(10)} ETH ` : 'n/a';
+  const balance = ethData.get('balance') !== false ? `${ethData.get('balance').div(Ether).toString(10)} WLI ` : 'n/a';
 
   const rate = exchangeRates.getIn([convertTo, 'rate']);
   const convertedBalance = (balance !== 'n/a' && rate) ? ethData.get('balance').div(Ether).times(rate).toFixed(2).toString(10) : '';
